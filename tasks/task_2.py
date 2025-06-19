@@ -10,8 +10,7 @@ def simple_cache(func):
         if key in cache:
             print("Из кэша")
             return cache[key]
-        else:
-            result = func(*args, **kwargs)
-            cache[key] = result
-            return result
+        result = func(*args, **kwargs)
+        cache[key] = result
+        return result
     return wrapper
